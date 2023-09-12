@@ -30,8 +30,13 @@ This library assumes you are using:
 
 ## Installation
 
-```
+```bash
+# origin
 npm i express-jsdoc-swagger
+
+# Supports typescript types files eg: *.d.ts
+npm i express-jsdoc-swagger-ts-types-support
+
 ```
 
 ## Basic Usage
@@ -325,7 +330,7 @@ const serverApp = async () => {
 const PORT = process.env.PORT || 4000;
 
 serverApp()
-  .then(app => 
+  .then(app =>
     app.listen(PORT, () =>
       console.log(`Listening PORT: ${PORT}`)
     ))

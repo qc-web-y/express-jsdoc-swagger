@@ -7,6 +7,7 @@
 import { EventEmitter } from "events";
 import express from "express";
 import { SwaggerUiOptions } from "swagger-ui-express";
+import stream from "stream"
 
 interface ContactObject {
   name: string;
@@ -60,6 +61,13 @@ interface Options {
 
 type UserSwagger = Record<string, unknown>;
 
-type EventEmiterHandler = (options: Options, userSwagger?: UserSwagger) => EventEmitter;
+type EventEmiterHandler = (
+  options: Options,
+  userSwagger?: UserSwagger
+) => EventEmitter;
 
-export default function expressJSDocSwagger(app: express.Application): EventEmiterHandler;
+export default function expressJSDocSwagger(
+  app: express.Application
+): EventEmiterHandler;
+
+export function gulpSwaggerJSDoc(obj, options: Options): stream.Transform;
